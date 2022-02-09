@@ -28,6 +28,36 @@ Route::get('/posts/{post}', function ($post) {
     ]);
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+use App\Http\Controllers\WelcomeController;
+
+Route::get('/', [WelcomeController::class, 'show']);
+
+use App\Http\Controllers\BlogController;
+
+Route::get('/blog', [BlogController::class, 'show']);
+
+use App\Http\Controllers\EasterEggController;
+
+Route::get('/easteregg', [EasterEggController::class, 'show']);
+
+use App\Http\Controllers\DashboardController;
+
+Route::get('/dashboard', [DashboardController::class, 'show']);
+
+use App\Http\Controllers\FaqController;
+
+Route::get('/faq', [FaqController::class, 'show']);
+
+use App\Http\Controllers\ProfileController;
+
+Route::get('/profile', [ProfileController::class, 'show']);
+
+
+
+
+
+
