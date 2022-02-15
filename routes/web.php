@@ -52,6 +52,14 @@ Route::get('/faq', [FaqController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show']);
 
+//Route::get('/profile', function () {
+//    $articles = App\Models\Article::all();
+//
+//    return view('profile', [
+//        'articles' => $articles
+//    ]);
+//});
+
 
 
 
