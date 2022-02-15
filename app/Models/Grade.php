@@ -10,7 +10,10 @@ class Grade extends Model
     use HasFactory;
 
 
-
+    /**
+     * @param $grade
+     * @return string
+     */
     public function addResult($grade): string
     {
         if ($grade >= $this->best_grade) {
