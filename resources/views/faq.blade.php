@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="css/faq.css" />
-    <link rel="stylesheet" href="css/general.css">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+@extends('layout')
+
+@section('title')
     <title>Frequently Asked Questions over HZ</title>
-    <meta
-        name="description"
-        content="Vaak gestelde vragen van nieuwe leerlingen over het HZ."
-    />
-    <script src="js/profile.js"></script>
-</head>
-<!-- navigatiebalk bovenkant -->
-<body>
-<div class="navigation">
-    <a href="/"> Home</a>
-    <a href="profile">Profile</a>
-    <a href="dashboard">Dashboard</a>
-    <a class="active" href="faq"> FAQ</a>
-    <a href="blog"> Blog</a>
-</div>
+@endsection
+
+
+@section('content')
 <!-- FAQ inklaptekst-->
 <div class="FAQ">
     <article>
@@ -29,84 +13,18 @@
 
         @foreach($faqs as $faq)
         <details>
-            <summary>{{$faq->question}}</summary>
+            <summary>{{ $faq->question }}</summary>
             @if ($faq->link !== null)
-                <a href="{{$faq->link}}"target="_blank"> {{$faq->answer}} </a>
+                <a href="{{$faq->link}}" target="_blank"> {{ $faq->answer }}</a>
             @else
-                {{$faq->answer}}
+                {{ $faq->answer }}
             @endif
         </details>
         @endforeach
-
-
-{{--        <details>--}}
-{{--            <summary>1. Hoe print je een document hier op de HZ?</summary>--}}
-{{--            <a href="https://print.hz.nl" target="_blank">print.hz.nl</a>--}}
-{{--        </details>--}}
-{{--        <details>--}}
-{{--            <summary>--}}
-{{--                2. Hoe scan je een document en stuur je dit naar je laptop hier op--}}
-{{--                de hz?--}}
-{{--            </summary>--}}
-{{--            <p>--}}
-{{--                Als je verbonden bent met de printer kan je je HZ pas scannen en dan--}}
-{{--                met de printer inscannen.--}}
-{{--            </p>--}}
-{{--            <p>Het PDF-bestand zou automatisch op je computer moeten komen.</p>--}}
-{{--        </details>--}}
-{{--        <details>--}}
-{{--            <summary>--}}
-{{--                3. Wat moet je doen als je ziek bent of symptomen van het coronavirus?--}}
-{{--            </summary>--}}
-{{--            <p>--}}
-{{--                Als je ziek bent of coronaklachten hebt moet je echt niet naar--}}
-{{--                school komen en het je docent via teams laten weten.--}}
-{{--            </p>--}}
-{{--            <p>Volg alle lessen zodat je geen achterstand oploopt.</p>--}}
-{{--        </details>--}}
-{{--        <details>--}}
-{{--            <summary>--}}
-{{--                4. Hoe kun je een projectruimte boeken in één van de vleugels van--}}
-{{--                het gebouw?--}}
-{{--            </summary>--}}
-{{--            <p>--}}
-{{--                Als je inlogt op MYHZ kan je via je Persoonlijk Menu naar--}}
-{{--                Selfservice Portal gaan.--}}
-{{--            </p>--}}
-{{--            <p>--}}
-{{--                Vanuit hier kan je een nieuwe reservering aanvragen. Hierna kies je--}}
-{{--                een tijdspan voor wanneer je de ruimte wil huren en ben je klaar.--}}
-{{--            </p>--}}
-{{--        </details>--}}
-{{--        <details>--}}
-{{--            <summary>--}}
-{{--                5. Wat zijn de instructies om je auto te parkeren op het HZ--}}
-{{--                parkeerterrein?--}}
-{{--            </summary>--}}
-{{--            <p>--}}
-{{--                Gratis parkeren is mogelijk op het parkeerterrein van PZEM aan de--}}
-{{--                Poelendaelesingel 10 in Middelburg.--}}
-{{--            </p>--}}
-{{--            <p>Dit is op een paar minuten lopen afstand naar de HZ.</p>--}}
-{{--            <p>--}}
-{{--                Het is helaas niet mogelijk om direct bij het HZ-pand te parkeren.--}}
-{{--            </p>--}}
-{{--            <p>--}}
-{{--                Bij het pand zelf zijn wel twee invalideplaatsen en plekken voor--}}
-{{--                HZ-auto’s.--}}
-{{--            </p>--}}
-{{--            <p>--}}
-{{--                Let op, parkeer je aan de Poelendaelesingel, dan kun je niet via het--}}
-{{--                tunneltje de HZ bereiken i.v.m.--}}
-{{--            </p>--}}
-{{--            <p>de bouwwerkzaamheden voor het Joint Research Center Zeeland.</p>--}}
-{{--            <p>Je kan via het kruispunt bij de stoplichten oversteken.</p>--}}
-{{--        </details>--}}
     </article>
 </div>
 
 <footer class="footer">
     <a href="easteregg"><img src="resources/hzlogo.png" class="hzlogo" alt="logo-hz"></a>
 </footer>
-</body>
-</html>
+@endsection

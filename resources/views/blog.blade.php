@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/blog.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@section('title')
     <title>Informatie over HBO-ICT</title>
-    <meta name="description" content="Verschillende delen informatie over het beroep dat je kan gaan doen na de opleiding, en over Jochem zijn SWOT-Analyse, etc.">
-    <script src="js/profile.js"></script>
-</head>
-<!-- navigatiebalk bovenin -->
-<body>
-<div class="navigation">
-    <a href="/"> Home</a>
-    <a href="profile">Profile</a>
-    <a href="dashboard">Dashboard</a>
-    <a href="faq"> FAQ</a>
-    <a class="active" href="blog"> Blog</a>
-</div>
+@endsection
+
+@section('content')
 <!-- 1e tekst -->
 <article>
     <h1>Studiekeuze:</h1>
@@ -101,8 +86,4 @@
 <footer class="footer">
     <img src="resources/hzlogo.png" class="hzlogo" alt="logo-hz">
 </footer>
-
-
-</body>
-
-</html>
+@endsection

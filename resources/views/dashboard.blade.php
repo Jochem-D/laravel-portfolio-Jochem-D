@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="css/dashboard.css" />
-    <link rel="stylesheet" href="css/general.css">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+@extends('layout')
+
+@section('title')
     <title>Informatie opleiding HBO-ICT op HZ</title>
-    <meta
-        name="description"
-        content="Deze pagina laat zien wat je op deze opleiding allemaal gaat doen."
-    />
-    <script src="javascript/profile.js"></script>
-</head>
+@endsection
+
 <!-- sidebar aan de linkerkant van scherm-->
-<body>
+@section('content')
 <div id="mySidebar" class="sidebar">
     <a
         href="https://hz.nl/over-de-hz/regelingen-documenten-1/onderwijs-en-examenregelingen"
@@ -42,16 +33,7 @@
     >
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
 </div>
-<!-- navigatiebalk aan de bovenkant -->
-<div class="navigation" id="main">
-    <a><span style="cursor: pointer" onclick="toggleNav()">≡</span></a>
-    <a href="/"> Home</a>
-    <a href="profile">Profile</a>
-    <a class="active" href="dashboard">Dashboard</a>
-    <a href="faq"> FAQ</a>
-    <a href="blog"> Blog</a>
-    <!-- tabel -->
-</div>
+
 <h2>Programma Opleiding</h2>
 <table>
     <tr>
@@ -156,5 +138,4 @@
 <footer class="footer">
     <img src="resources/hzlogo.png" class="hzlogo" alt="logo-hz" />
 </footer>
-</body>
-</html>
+@endsection

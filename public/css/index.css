@@ -1,7 +1,7 @@
-.motivation{
+.motivation {
     font-family: Arial, Helvetica, sans-serif;
 }
-h1{
+h1 {
     margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
@@ -11,18 +11,18 @@ p {
     line-height: 3px;
     font-size: 15px;
 }
-.picpc{
+.picpc {
     width: 200px;
     float: right;
     margin-right: -600px;
     margin-top: 300px;
 }
-.picsite{
+.picsite {
     width: 600px;
     float: right;
     margin-right: 0px;
 }
-.footer{
+.footer {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -30,6 +30,19 @@ p {
     background-color: lightseagreen;
     text-align: center;
 }
-.hzlogo{
+.hzlogo {
     width: 50px;
 }
+.togoa2 {
+    width: 50px;
+    float: right;
+    margin-right: 20px;
+}
+.lmao {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 30px;
+}
+
