@@ -52,4 +52,33 @@ class FaqController
 
         return redirect('/faq');
     }
+
+    public function edit($id)
+    {
+        $faq = Faq::find($id);
+
+
+        return view('faqs.edit', ['faq' => $faq]);
+    }
+
+    public function update($id)
+    {
+        $faq = Faq::find($id);
+
+        $faq->question = request('question');
+        $faq->answer = request('answer');
+        $faq->link = request('link');
+        $faq->save();
+
+        return redirect('/faq');
+    }
+
+    public function delete($id)
+    {
+        $faq = Faq::find($id);
+
+        $faq->delete();
+
+        return redirect('/faq');
+    }
 }
