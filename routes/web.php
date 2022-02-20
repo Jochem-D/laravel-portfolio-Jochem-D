@@ -19,27 +19,6 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first-post' => 'Hello, this is my first blog post!',
-        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-    ];
-
-    if (!array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, that post was not found.');
-    }
-
-    return view('post', [
-        'post' => $posts[$post]
-    ]);
-});
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
-
 Route::get('/', [WelcomeController::class, 'show']);
 
 Route::get('/blog', [BlogController::class, 'show']);
@@ -48,17 +27,15 @@ Route::get('/easteregg', [EasterEggController::class, 'show']);
 
 Route::get('/dashboard', [DashboardController::class, 'show']);
 
-Route::get('/faq', [FaqController::class, 'show']);
+Route::get('/faq', [FaqController::class, 'index']);
+Route::post('/faq', [FaqController::class, 'store']);
+Route::get('/faq/create', [FaqController::class, 'create']);
+Route::get('/faq/{faq}', [FaqController::class, 'show']);
+
 
 Route::get('/profile', [ProfileController::class, 'show']);
 
-//Route::get('/profile', function () {
-//    $articles = App\Models\Article::all();
-//
-//    return view('profile', [
-//        'articles' => $articles
-//    ]);
-//});
+
 
 
 

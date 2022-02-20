@@ -16,12 +16,12 @@
   background-color: #02bdca;
   color: white;
 }
-  
+
 #main li a:hover:not(.active) {
   background-color: rgb(31, 2, 133);
   color: white;
 }
-
+/*sidebar*/
 .sidebar {
   height: 100%;
   width: 0;
@@ -34,9 +34,9 @@
   transition: 0.5s;
   padding-top: 60px;
 }
-  
+
 .sidebar li {
-  list-style: none;   
+  list-style: none;
 }
 
 .sidebar a {
@@ -47,22 +47,22 @@
   display: block;
   transition: 0.3s;
   font-family:Arial, Helvetica, sans-serifF
-    
+
 }
-  
+
 .sidebar a:hover {
   color: #ffffff;
 }
-  
+
 .sidebar .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-    
+
 }
-  
+
 .openbtn {
   font-size: 20px;
   cursor: pointer;
@@ -71,52 +71,22 @@
   padding: 10px 10px;
   border: none;
 }
-  
+
 .openbtn:hover {
   background-color: #444;
 }
-  
+
 #main {
   transition: margin-left .5s;
   padding: 0px;
 }
 
-#main nav li span {
+#main span {
   color:white;
   height: 10px;
   margin: 5px;
 }
-/*tabel*/
 
-table, th, td {
-  border:1.5px solid black;
-  border-collapse:collapse;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-}
-th{
-  color: white;
-}
-th {
-  background-color: #303686;
-  
-}
-table {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  background-color: white;
-  color: black;
-}
-
-h2{
-  text-align: center;
-}
-
-p{
-  text-align: center;
-}
 .footer{
   position: absolute;
   left: 0;
@@ -128,4 +98,3 @@ p{
 .hzlogo{
   width: 50px;
 }
-  
