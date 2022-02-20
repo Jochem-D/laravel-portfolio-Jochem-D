@@ -53,6 +53,10 @@ class FaqController
         return redirect('/faq');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function edit($id)
     {
         $faq = Faq::find($id);
@@ -61,6 +65,10 @@ class FaqController
         return view('faqs.edit', ['faq' => $faq]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update($id)
     {
         $faq = Faq::find($id);
@@ -73,6 +81,10 @@ class FaqController
         return redirect('/faq');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete($id)
     {
         $faq = Faq::find($id);
