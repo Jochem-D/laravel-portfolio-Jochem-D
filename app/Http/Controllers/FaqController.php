@@ -18,6 +18,10 @@ class FaqController
         return view('faqs.index', ['faqs' => $faqs]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function show($id)
     {
         $faq = Faq::find($id);
@@ -25,11 +29,17 @@ class FaqController
         return view('faqs.show', ['faq' => $faq]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function create()
     {
-      return view('faqs.create');
+        return view('faqs.create');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store()
     {
         $faq = new Faq();
