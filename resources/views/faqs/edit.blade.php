@@ -12,7 +12,7 @@
                 <label class="label" for="title">Question</label>
 
                 <div class="control">
-                    <input class="input" type="text" name="question" id="question" value="{{$faq->question}}">
+                    <input class="input" type="text" name="question" id="question" required="yes" value="{{$faq->question}}">
                 </div>
             </div>
 
@@ -20,7 +20,7 @@
                 <label class="label" for="answer">Answer</label>
 
                 <div class="control">
-                    <textarea class="textarea" name="answer" id="answer">{{$faq->answer}}</textarea>
+                    <textarea class="textarea" name="answer" required="yes" id="answer">{{$faq->answer}}</textarea>
                 </div>
             </div>
 

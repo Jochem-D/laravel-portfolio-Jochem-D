@@ -11,7 +11,7 @@
                 <label class="label" for="title">Question</label>
 
                 <div class="control">
-                    <input class="input" type="text" name="question" id="question">
+                    <input class="input" type="text" name="question" id="question" required="yes">
                 </div>
             </div>
 
@@ -19,7 +19,7 @@
                 <label class="label" for="answer">Answer</label>
 
                 <div class="control">
-                    <textarea class="textarea" name="answer" id="answer"></textarea>
+                    <textarea class="textarea" name="answer" id="answer" required="yes"></textarea>
                 </div>
             </div>
 

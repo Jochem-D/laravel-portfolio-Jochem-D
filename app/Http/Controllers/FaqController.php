@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Faq;
+use http\Env\Request;
+use Illuminate\Routing\Controller as BaseController;
 
 class FaqController
 {
@@ -22,10 +25,8 @@ class FaqController
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($id)
+    public function show(Faq $faq)
     {
-        $faq = Faq::find($id);
-
         return view('faqs.show', ['faq' => $faq]);
     }
 
@@ -42,13 +43,13 @@ class FaqController
      */
     public function store()
     {
-        $faq = new Faq();
+        $validatedAttributes = request()->validate([
+            'question' => 'required',
+            'answer' => 'required',
+            'link' => 'nullable'
+        ]);
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->link = request('link');
-
-        $faq->save();
+        Faq::create($validatedAttributes);
 
         return redirect('/faq');
     }
@@ -57,11 +58,8 @@ class FaqController
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        $faq = Faq::find($id);
-
-
         return view('faqs.edit', ['faq' => $faq]);
     }
 
@@ -69,14 +67,15 @@ class FaqController
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id)
+    public function update(faq $faq)
     {
-        $faq = Faq::find($id);
+        $validatedAttributes = request()->validate([
+            'question' => 'required',
+            'answer' => 'required',
+            'link' => 'nullable'
+        ]);
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->link = request('link');
-        $faq->save();
+        $faq->update($validatedAttributes);
 
         return redirect('/faq');
     }
@@ -85,10 +84,8 @@ class FaqController
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete($id)
+    public function delete(Faq $faq)
     {
-        $faq = Faq::find($id);
-
         $faq->delete();
 
         return redirect('/faq');

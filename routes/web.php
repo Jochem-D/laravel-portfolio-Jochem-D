@@ -30,7 +30,7 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/faq', [FaqController::class, 'index']);
 Route::post('/faq', [FaqController::class, 'store']);
 Route::get('/faq/create', [FaqController::class, 'create']);
-Route::get('/faq/{faq}', [FaqController::class, 'show']);
+Route::get('/faq/{faq}', [FaqController::class, 'show'])->name('faq.show');
 Route::get('/faq/{faq}/edit', [FaqController::class, 'edit']);
 Route::put('/faq/{faq}', [FaqController::class, 'update']);
 Route::delete('/faq/{faq}', [FaqController::class, 'delete']);

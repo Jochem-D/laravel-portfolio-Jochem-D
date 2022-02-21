@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Faq extends Model
 {
+    protected $guarded = [];
+   // protected $fillable = ['question', 'answer', 'link'];
     use HasFactory;
+    public function getRouteKeyName()
+    {
+        return 'question'; //Article::where('question', $faq)->first()
+    }
 }
