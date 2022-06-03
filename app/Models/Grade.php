@@ -9,7 +9,6 @@ class Grade extends Model
 {
     use HasFactory;
 
-
     /**
      * @param $grade
      * @return string

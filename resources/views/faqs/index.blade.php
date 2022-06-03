@@ -21,6 +21,7 @@
                     @endif
                 </details>
             @endforeach
+            <a href="/faq/create" class="button">Create a Faq</a>
         </article>
     </div>
 

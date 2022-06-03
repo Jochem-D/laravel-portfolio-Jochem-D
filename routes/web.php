@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\BlogController;
@@ -26,6 +27,7 @@ Route::get('/blog', [BlogController::class, 'show']);
 Route::get('/easteregg', [EasterEggController::class, 'show']);
 
 Route::get('/dashboard', [DashboardController::class, 'show']);
+Route::get('/dashboard', [GradeController::class, 'show']);
 
 Route::get('/faq', [FaqController::class, 'index']);
 Route::post('/faq', [FaqController::class, 'store']);
@@ -35,8 +37,8 @@ Route::get('/faq/{faq}/edit', [FaqController::class, 'edit']);
 Route::put('/faq/{faq}', [FaqController::class, 'update']);
 Route::delete('/faq/{faq}', [FaqController::class, 'delete']);
 
-
 Route::get('/profile', [ProfileController::class, 'show']);
+Route::get('/grade', [GradeController::class, 'show']);
 
 
 
