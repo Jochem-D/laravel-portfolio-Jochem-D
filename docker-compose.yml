@@ -35,18 +35,17 @@ services:
     image: composer:latest
     volumes:
       - '.:/app'
-    command: >
-           "composer install && composer update"
+    command:
+          "composer update"
   node:
-    depends_on:
-        - php-apache
-    container_name: npm
+    container_name: Project_npm
     image: node:latest
     working_dir: /home/node/app
-    volumes:
+    volumes: 
         - ./:/home/node/app
     command: >
-        bash -c "npm install && npm update && npm run ts-watch"
+        bash -c "npm update
+        && npm run ts-watch"
 networks:
   coolnetworkrighthere:
     driver: bridge
