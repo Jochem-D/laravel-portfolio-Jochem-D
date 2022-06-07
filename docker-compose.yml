@@ -17,7 +17,7 @@ services:
       - coolnetworkrighthere
     
   php-apache:
-    container_name: Portfolio-Appplication
+    container_name: Portfolio_Appplication
     build:
       context: .
       dockerfile: Dockerfile
@@ -36,15 +36,17 @@ services:
     volumes:
       - '.:/app'
     command: >
-           "composer update"
+           "composer install && composer update"
   node:
+    depends_on:
+        - php-apache
     container_name: npm
     image: node:latest
     working_dir: /home/node/app
     volumes:
         - ./:/home/node/app
     command: >
-        bash -c "npm update && npm run ts-watch"
+        bash -c "npm install && npm update && npm run ts-watch"
 networks:
   coolnetworkrighthere:
     driver: bridge
