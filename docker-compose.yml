@@ -1,3 +1,5 @@
+version: "3.7"
+
 services:
   mysql:
     container_name: Database_Portfolio
@@ -7,7 +9,7 @@ services:
     ports:
       - '${FORWARDED_DB_PORT:-3306}:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
       MYSQL_ROOT_HOST: '%'
       MYSQL_DATABASE: '${DB_DATABASE}'
       MYSQL_USER: '${DB_USERNAME}'
@@ -36,19 +38,10 @@ services:
     volumes:
       - '.:/app'
     command:
-          "composer update"
-  node:
-    container_name: Project_npm
-    image: node:latest
-    working_dir: /home/node/app
-    volumes: 
-        - ./:/home/node/app
-    command: >
-        bash -c "npm update
-        && npm run ts-watch"
-networks:
-  coolnetworkrighthere:
-    driver: bridge
+      "composer update"
+    networks:
+      coolnetworkrighthere:
+        driver: bridge
 
 volumes:
   apache-mysql:
