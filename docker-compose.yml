@@ -7,7 +7,7 @@ services:
     volumes:
       - 'apache-mysql:/var/lib/mysql'
     ports:
-      - '${FORWARDED_DB_PORT:-3306}:3306'
+      - '${FORWARDED_DB_PORT:-3309}:3309'
     environment:
       MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
       MYSQL_ROOT_HOST: '%'
@@ -39,10 +39,9 @@ services:
       - '.:/app'
     command:
       "composer update"
-    networks:
-      coolnetworkrighthere:
+networks:
+    coolnetworkrighthere:
         driver: bridge
-
 volumes:
   apache-mysql:
     driver: local
