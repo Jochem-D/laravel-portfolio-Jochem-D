@@ -1,3 +1,5 @@
+version: "3.7"
+
 services:
   mysql:
     container_name: Database_Portfolio
@@ -7,7 +9,7 @@ services:
     ports:
       - '${FORWARDED_DB_PORT:-3306}:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
       MYSQL_ROOT_HOST: '%'
       MYSQL_DATABASE: '${DB_DATABASE}'
       MYSQL_USER: '${DB_USERNAME}'
@@ -36,10 +38,10 @@ services:
     volumes:
       - '.:/app'
     command:
-          "composer update"
-  networks:
-    coolnetworkrighthere:
-    driver: bridge
+      "composer update"
+    networks:
+      coolnetworkrighthere:
+        driver: bridge
 
 volumes:
   apache-mysql:
