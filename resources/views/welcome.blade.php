@@ -84,7 +84,7 @@
                 Zo weet ik nu dat software engineering erg leuk lijkt en de data
                 scientist kant er ook leuk uitziet,
             </p>
-            <p>maar dat ik niks aan de bussiness IT kant.</p>
+            <p>maar dat ik niks aan de bussiness IT kant vindt.</p>
         </div>
     </article>
     <!-- linkjes youtubers -->
