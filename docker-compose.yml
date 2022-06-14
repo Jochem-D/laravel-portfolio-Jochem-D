@@ -15,7 +15,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     networks:
       - coolnetworkrighthere
-    
+
   php-apache:
     container_name: Portfolio_Appplication
     build:
@@ -37,17 +37,8 @@ services:
       - '.:/app'
     command:
           "composer update"
-  node:
-    container_name: Project_npm
-    image: node:latest
-    working_dir: /home/node/app
-    volumes: 
-        - ./:/home/node/app
-    command: >
-        bash -c "npm update
-        && npm run ts-watch"
-networks:
-  coolnetworkrighthere:
+  networks:
+    coolnetworkrighthere:
     driver: bridge
 
 volumes:
