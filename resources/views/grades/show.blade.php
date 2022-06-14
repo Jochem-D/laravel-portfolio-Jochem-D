@@ -11,7 +11,7 @@
         <article>
             <h1>Grades</h1>
 
-            @foreach($grade as $grades)
+            @foreach($grades as $grade)
                 <details>
                     <summary>{{ $grade->course_name }}</summary>
                         {{ $grade->test_name }}

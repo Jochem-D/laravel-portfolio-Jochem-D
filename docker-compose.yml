@@ -1,4 +1,4 @@
-version: "3.7"
+version: "2.5"
 
 services:
   mysql:
@@ -16,7 +16,8 @@ services:
       MYSQL_PASSWORD: '${DB_PASSWORD}'
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     networks:
-      - coolnetworkrighthere
+      - portfolionetwork
+    
 
   php-apache:
     container_name: Portfolio_Appplication
@@ -28,7 +29,7 @@ services:
     volumes:
       - '.:/var/www/html/'
     networks:
-      - coolnetworkrighthere
+      - portfolionetwork
     depends_on:
       - mysql
 
@@ -40,8 +41,9 @@ services:
     command:
       "composer update"
 networks:
-    coolnetworkrighthere:
-        driver: bridge
+  portfolionetwork:
+    driver: bridge
+
 volumes:
   apache-mysql:
     driver: local
