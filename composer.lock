@@ -902,7 +902,6 @@
         },
         {
             "name": "guzzlehttp/psr7",
-<<<<<<< Updated upstream
             "version": "2.3.0",
             "source": {
                 "type": "git",
@@ -913,18 +912,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/psr7/zipball/83260bb50b8fc753c72d14dc1621a2dac31877ee",
                 "reference": "83260bb50b8fc753c72d14dc1621a2dac31877ee",
-=======
-            "version": "2.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/psr7.git",
-                "reference": "a119247127ff95789a2d95c347cd74721fbedaa4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/a119247127ff95789a2d95c347cd74721fbedaa4",
-                "reference": "a119247127ff95789a2d95c347cd74721fbedaa4",
->>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -1010,11 +997,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-<<<<<<< Updated upstream
                 "source": "https://github.com/guzzle/psr7/tree/2.3.0"
-=======
-                "source": "https://github.com/guzzle/psr7/tree/2.2.2"
->>>>>>> Stashed changes
             },
             "funding": [
                 {
@@ -1030,11 +1013,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< Updated upstream
             "time": "2022-06-09T08:26:02+00:00"
-=======
-            "time": "2022-06-08T19:55:23+00:00"
->>>>>>> Stashed changes
         },
         {
             "name": "laravel/framework",
