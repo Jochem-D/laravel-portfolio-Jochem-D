@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
@@ -39,6 +40,7 @@ Route::delete('/faq/{faq}', [FaqController::class, 'delete']);
 
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/grade', [GradeController::class, 'show']);
+Route::get('/kitsu', [ApiController::class, 'show']);
 
 
 

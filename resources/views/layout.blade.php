@@ -18,12 +18,14 @@
 
 <body>
 <div class="navigation">
+    <span style="cursor: pointer" onclick="toggleNav()">≡</span>
      <a class="{{ Request::path() === '/' ? 'active' : '' }}" href= "/"> Home</a>
      <a class="{{ Request::path() === 'profile' ? 'active' : '' }}" href="/profile">Profile</a>
      <a class="{{ Request::path() === 'dashboard' ? 'active' : '' }}" href="/dashboard">Dashboard</a>
      <a class="{{ Request::path() === 'faq' ? 'active' : '' }}" href="/faq"> FAQ</a>
      <a class="{{ Request::path() === 'blog' ? 'active' : '' }}" href="/blog"> Blog</a>
-    <span style="cursor: pointer" onclick="toggleNav()">≡</span>
+    <a class="{{ Request::path() === 'kitsu' ? 'active' : '' }}" href="/kitsu"> Api</a>
+
 </div>
 <div id="mySidebar" class="sidebar">
     <a
