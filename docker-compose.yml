@@ -17,7 +17,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     networks:
       - portfolionetwork
-    
+
 
   php-apache:
     container_name: Portfolio_Appplication
