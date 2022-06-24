@@ -18,28 +18,28 @@ services:
             - portfolionetwork
 
 
-  php-apache:
-    container_name: Portfolio_Appplication
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '${APP_PORT:-80}:80'
-    volumes:
-      - '.:/var/www/html/'
-    networks:
-      - portfolionetwork
-    depends_on:
-      - mysql
+    php-apache:
+        container_name: Portfolio_Appplication
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '${APP_PORT:-80}:80'
+        volumes:
+            - '.:/var/www/html/'
+        networks:
+            - portfolionetwork
+        depends_on:
+            - mysql
 
-  composer:
-    container_name: Composer_Portfolio
-    image: composer:latest
-    volumes:
-      - '.:/app'
-    command: >
-        bash -c "composer install
-        && composer update"
+    composer:
+        container_name: Composer_Portfolio
+        image: composer:latest
+        volumes:
+            - '.:/app'
+        command: >
+            bash -c "composer install
+            && composer update"
 networks:
   portfolionetwork:
     driver: bridge
