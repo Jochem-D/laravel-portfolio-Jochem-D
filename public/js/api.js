@@ -7,10 +7,8 @@ async function init() {
     // } catch (err) {
     //     console.error("Error: ", err);
     // }
-    let indicator = 0;
-    let list = await getAnimeData(indicator.toString());
+    let list = await getAnimeData(toString());
     console.log(list);
-
     await updatePage(list);
 }
 
