@@ -1,22 +1,21 @@
 version: "3.8"
 
 services:
-  mysql:
-    container_name: Database_Portfolio
-    image: mysql:latest
-    volumes:
-      - 'apache-mysql:/var/lib/mysql'
-    ports:
-      - '${FORWARDED_DB_PORT:-3306}:3306'
-    environment:
-      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
-      MYSQL_ROOT_HOST: '%'
-      MYSQL_DATABASE: '${DB_DATABASE}'
-      MYSQL_USER: '${DB_USERNAME}'
-      MYSQL_PASSWORD: '${DB_PASSWORD}'
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
-    networks:
-      - portfolionetwork
+    mysql:
+        container_name: Database_Portfolio
+        image: mysql:latest
+        volumes:
+            - 'apache-mysql:/var/lib/mysql'
+        ports:
+            - '${FORWARDED_DB_PORT:-3306}:3306'
+        environment:
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_USER: '${DB_USERNAME}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        networks:
+            - portfolionetwork
 
 
   php-apache:
@@ -38,8 +37,9 @@ services:
     image: composer:latest
     volumes:
       - '.:/app'
-    command:
-      "composer update"
+    command: >
+        bash -c "composer install
+        && composer update"
 networks:
   portfolionetwork:
     driver: bridge
