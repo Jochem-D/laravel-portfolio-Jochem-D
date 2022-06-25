@@ -21,7 +21,17 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', [WelcomeController::class, 'show']);
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::get('/', [WelcomeController::class, 'show'])->name('welcome.show');
 
 Route::get('/blog', [BlogController::class, 'show']);
 
@@ -31,12 +41,12 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/dashboard', [GradeController::class, 'show']);
 
 Route::get('/faq', [FaqController::class, 'index']);
-Route::post('/faq', [FaqController::class, 'store']);
-Route::get('/faq/create', [FaqController::class, 'create']);
+Route::post('/faq', [FaqController::class, 'store'])->middleware('auth');
+Route::get('/faq/create', [FaqController::class, 'create'])->middleware('auth');
 Route::get('/faq/{faq}', [FaqController::class, 'show'])->name('faq.show');
-Route::get('/faq/{faq}/edit', [FaqController::class, 'edit']);
+Route::get('/faq/{faq}/edit', [FaqController::class, 'edit'])->middleware('auth')->name(faq.edit);
 Route::put('/faq/{faq}', [FaqController::class, 'update']);
-Route::delete('/faq/{faq}', [FaqController::class, 'delete']);
+Route::delete('/faq/{faq}', [FaqController::class, 'delete'])->name('faq.delete');
 
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/grade', [GradeController::class, 'show']);

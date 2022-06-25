@@ -38,10 +38,10 @@
                 </div>
             </div>
         </form>
-        <form method="POST" action="/faq/{{ $faq->id }}">
+        <form method="POST" action={{route('faq.delete', $faq->id )}}>
             @csrf
             @method('DELETE')
-            <button type="submit">Delete</button>
+            <button class="button is-link">Delete</button>
         </form>
     </div>
 @endsection

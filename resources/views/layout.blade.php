@@ -19,13 +19,23 @@
 <body>
 <div class="navigation">
     <span style="cursor: pointer" onclick="toggleNav()">≡</span>
-     <a class="{{ Request::path() === '/' ? 'active' : '' }}" href= "/"> Home</a>
+     <a class="{{ Request::path() === '/' ? 'active' : '' }}" href= "/">Home</a>
      <a class="{{ Request::path() === 'profile' ? 'active' : '' }}" href="/profile">Profile</a>
      <a class="{{ Request::path() === 'dashboard' ? 'active' : '' }}" href="/dashboard">Dashboard</a>
-     <a class="{{ Request::path() === 'faq' ? 'active' : '' }}" href="/faq"> FAQ</a>
-     <a class="{{ Request::path() === 'blog' ? 'active' : '' }}" href="/blog"> Blog</a>
-    <a class="{{ Request::path() === 'kitsu' ? 'active' : '' }}" href="/kitsu"> Api</a>
+     <a class="{{ Request::path() === 'faq' ? 'active' : '' }}" href="/faq">FAQ</a>
+     <a class="{{ Request::path() === 'blog' ? 'active' : '' }}" href="/blog">Blog</a>
+    <a class="{{ Request::path() === 'kitsu' ? 'active' : '' }}" href="/kitsu">Api</a>
 
+    @if(!Auth::check())
+        <a class="{{ Request::path() === 'login' ? 'active' : '' }}" href="/login">Login</a>
+    @elseif(Auth::check())
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
+    @endif
 </div>
 <div id="mySidebar" class="sidebar">
     <a

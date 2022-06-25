@@ -16,12 +16,15 @@
                     <summary>{{ $faq->question }}</summary>
                     @if ($faq->link !== null)
                         <a href="{{$faq->link}}" target="_blank"> {{ $faq->answer }}</a>
+                        <a href={{route('faq.edit')}}</a>Edit</a>
                     @else
                         {{ $faq->answer }}
                     @endif
                 </details>
             @endforeach
+            @if (Auth::check())
             <a href="/faq/create" class="button">Create a Faq</a>
+            @endif
         </article>
     </div>
 
