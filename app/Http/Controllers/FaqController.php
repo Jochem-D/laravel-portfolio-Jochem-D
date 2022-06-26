@@ -88,6 +88,6 @@ class FaqController
     {
         $faq->delete();
 
-        return redirect()->route('faq');
+        return redirect()->route('faq.index');
     }
 }

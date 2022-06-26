@@ -39,7 +39,7 @@ Route::get('/easteregg', [EasterEggController::class, 'show']);
 
 Route::get('/dashboard', [GradeController::class, 'index']);
 
-Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::post('/faq', [FaqController::class, 'store'])->middleware('auth');
 Route::get('/faq/create', [FaqController::class, 'create'])->middleware('auth');
 Route::get('/faq/{faq}', [FaqController::class, 'show'])->name('faq.show');

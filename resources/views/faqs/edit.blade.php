@@ -38,7 +38,7 @@
                 </div>
             </div>
         </form>
-        <form method="POST" action={{route('faq.delete', $faq->id )}}>
+        <form method="POST" action={{route('faq.delete', $faq)}}>
             @csrf
             @method('DELETE')
             <button class="button is-link">Delete</button>
