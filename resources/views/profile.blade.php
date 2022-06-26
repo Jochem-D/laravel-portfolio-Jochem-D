@@ -21,7 +21,7 @@
         <h1>Persoonlijke gegevens</h1>
         <ul>
             <li>Naam: Jochem Dijkdrent</li>
-            <li>Leeftijd: 17 jaar</li>
+            <li>Leeftijd: 18 jaar</li>
             <li>Woonplaats: Kloetinge</li>
             <li>
                 Vooropleiding en profiel: Mijn vooropleiding was Havo met het
