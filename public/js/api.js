@@ -7,7 +7,7 @@ async function init() {
     // } catch (err) {
     //     console.error("Error: ", err);
     // }
-    let list = await getAnimeData(toString());
+    let list = await getKitsuData();
     console.log(list);
     await updatePage(list);
 }
@@ -32,7 +32,7 @@ async function updatePage(list) {
 
 
 }
-async function getAnimeData() {
+async function getKitsuData() {
     try {
         let response = await fetch(`https://kitsu.io/api/edge/users/1288763/library-entries?page[limit]=15&sort=-rating&filter[status]=completed`);
         let list = await response.json();
@@ -43,7 +43,7 @@ async function getAnimeData() {
 
         for (const anime of animes) {
             let rating = anime.attributes;
-            let relatedAnime = await fetchAnimeData(anime.relationships.anime.links.related);
+            let relatedAnime = await fetchKitsuData(anime.relationships.anime.links.related);
 
             if (rating && relatedAnime != null){
                 let grade = {
@@ -60,7 +60,7 @@ async function getAnimeData() {
     }
 }
 
-async function fetchAnimeData(relation) {
+async function fetchKitsuData(relation) {
     try {
         let response = await fetch(relation);
         let list = await response.json();
