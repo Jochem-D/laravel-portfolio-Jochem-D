@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Grade extends Model
 {
     use HasFactory;
+    protected $fillable = ['course_name', 'test_name', 'lowest_passing_grade'];
 
     /**
      * @param $grade

@@ -48,9 +48,9 @@ class GradeController extends Controller
             'lowest_passing_grade' => 'required'
         ]);
 
-        Faq::create($validatedAttributes);
+        Grade::create($validatedAttributes);
 
-        return redirect('/grade');
+        return redirect('/dashboard');
     }
 
     /**

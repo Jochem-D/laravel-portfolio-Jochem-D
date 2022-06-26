@@ -24,7 +24,7 @@
             </div>
 
             <div class="field">
-                <label class="label" for="link">Link</label>
+                <label class="label" for="link">Lowest passing grade</label>
 
                 <div class="control">
                     <textarea class="textarea" name="lowest_passing_grade" id="lowest_passing_grade" required="yes"></textarea>

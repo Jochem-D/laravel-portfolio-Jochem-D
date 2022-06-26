@@ -77,7 +77,7 @@ class FaqController
 
         $faq->update($validatedAttributes);
 
-        return redirect('/faq');
+        return redirect()->route('faq.show', $faq);
     }
 
     /**
@@ -88,6 +88,6 @@ class FaqController
     {
         $faq->delete();
 
-        return redirect('/faq');
+        return redirect()->route('faq');
     }
 }

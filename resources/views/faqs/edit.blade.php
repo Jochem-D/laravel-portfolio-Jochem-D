@@ -5,7 +5,7 @@
         <div id="page" class="container"></div>
         <h1>Edit an existing question!</h1>
 
-        <form method="POST" action="/faq/{{$faq->id}}">
+        <form method="POST" action="{{route('faq.update', $faq)}}">
             @csrf
             @method('PUT')
             <div class="field">

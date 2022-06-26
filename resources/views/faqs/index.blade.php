@@ -14,9 +14,11 @@
             @foreach($faqs as $faq)
                 <details>
                     <summary>{{ $faq->question }}</summary>
+                    <a href="{{route('faq.show', $faq)}}">Show</a>
+                    <br>
                     @if ($faq->link !== null)
                         <a href="{{$faq->link}}" target="_blank"> {{ $faq->answer }}</a>
-                        <a href={{route('faq.edit')}}</a>Edit</a>
+
                     @else
                         {{ $faq->answer }}
                     @endif

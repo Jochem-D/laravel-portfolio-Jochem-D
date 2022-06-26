@@ -1,24 +1,23 @@
 @extends('layout')
 
 @section('title')
-    <title>Edit Grades</title>
+    <title>Dashboard</title>
 @endsection
 
 
 @section('content')
-    <!-- FAQ inklaptekst-->
     <div class="Grades">
-        <article>
             <h1>Grades</h1>
-
             @foreach($grades as $grade)
-                <details>
-                    <summary>{{ $grades->course_name }}</summary>
-                        {{ $grades->test_name }}
-                </details>
+            <br> Course Name: {{ $grade->course_name }}
+        <br>
+                    <br>Test Name:{{ $grade->test_name }}
+        <br>
+                    <br>Lowest Passing Grade:{{$grade->lowest_passing_grade}}
+        <br>
+
             @endforeach
             <a href="/faq/create" class="button">Create a Faq</a>
-        </article>
     </div>
 
     <footer class="footer">
