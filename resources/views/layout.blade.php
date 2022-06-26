@@ -34,7 +34,6 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
-
     @endif
 </div>
 <div id="mySidebar" class="sidebar">
@@ -63,7 +62,6 @@
     >Github omgeving</a
     >
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
-
 </div>
 @yield('content')
 </body>
