@@ -17,10 +17,12 @@
         <br>
 
             @endforeach
-            <a href="/faq/create" class="button">Create a Faq</a>
+        @if (Auth::check())
+            <a href="/grade/create" class="button">Create a Grade</a>
+        @endif
     </div>
 
     <footer class="footer">
-        <a href="easteregg"><img src="resources/hzlogo.png" class="hzlogo" alt="logo-hz"></a>
+        <a href="notfound"><img src="resources/hzlogo.png" class="hzlogo" alt="logo-hz"></a>
     </footer>
 @endsection
