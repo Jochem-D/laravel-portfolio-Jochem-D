@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
@@ -53,6 +54,9 @@ Route::get('/grade/create', [GradeController::class, 'create'])->middleware('aut
 Route::post('/grades', [GradeController::class, 'store'])->middleware('auth');
 Route::get('/grade', [GradeController::class, 'show']);
 Route::get('/kitsu', [ApiController::class, 'show']);
+Route::get('/500', function () {
+    return abort(500);
+})->name('500');
 
 
 
