@@ -8,7 +8,7 @@
         <form method="POST" action="/faq">
             @csrf
             <div class="field">
-                <label class="label" for="title">Question *</label>
+                <label class="aaaa" for="title">Question <span style="color:red">*</span></label>
 
                 <div class="control">
                     <input placeholder="please put your question here" class="input" type="text" name="question" id="question" required="yes">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="field">
-                <label class="label" for="answer">Answer *</label>
+                <label class="aaaa" for="answer">Answer <span style="color:red">*</span></label>
 
                 <div class="control">
                     <textarea placeholder="please put the answer to the question here" class="textarea" name="answer" id="answer" required="yes"></textarea>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="field">
-                <label class="label" for="link">Link</label>
+                <label class="aaaa" for="link">Link</label>
 
                 <div class="control">
                     <textarea placeholder="please put a link to a website here" class="textarea" name="link" id="link"></textarea>
