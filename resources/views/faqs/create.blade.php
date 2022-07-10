@@ -8,7 +8,7 @@
         <form method="POST" action="/faq">
             @csrf
             <div class="field">
-                <label class="label" for="title">Question</label>
+                <label class="label" for="title">Question *</label>
 
                 <div class="control">
                     <input placeholder="please put your question here" class="input" type="text" name="question" id="question" required="yes">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="field">
-                <label class="label" for="answer">Answer</label>
+                <label class="label" for="answer">Answer *</label>
 
                 <div class="control">
                     <textarea placeholder="please put the answer to the question here" class="textarea" name="answer" id="answer" required="yes"></textarea>
